@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "279726684381",
+    "project_id": "e-authentication-system-8a3bb",
+    "storage_bucket": "e-authentication-system-8a3bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279726684381:android:14fec76808b3ef502a4334",
+        "android_client_info": {
+          "package_name": "com.internshala.e_authentication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "279726684381-codghiuiojtpvbd1u1o6g4s7nk1il96k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAwYcu1r13i4ZbL4_Ni2AIFrX75x16sy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "279726684381-codghiuiojtpvbd1u1o6g4s7nk1il96k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
