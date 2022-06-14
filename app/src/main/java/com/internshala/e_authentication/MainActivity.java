@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private TextView register;
@@ -90,8 +91,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful())
                 {
-                    startActivity(new Intent(MainActivity.this,profileActivity.class));
-                    progressBar.setVisibility(View.GONE);
+                    FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+                    if(user.isEmailVerified())
+                    {
+                        startActivity(new Intent(MainActivity.this,profileActivity.class));
+                        progressBar.setVisibility(View.GONE);
+                    }
+                    else
+                    {
+                        user.sendEmailVerification();
+                        Toast.makeText(MainActivity.this,"Please Verify your email",Toast.LENGTH_LONG).show();
+                        progressBar.setVisibility(View.GONE);
+                    }
+
                 }
                 else
                 {
