@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Eauthentication">
         <activity
+            android:name=".phone_verify"
+            android:exported="false" />
+        <activity
             android:name=".Forgot_password"
             android:exported="false" />
         <activity

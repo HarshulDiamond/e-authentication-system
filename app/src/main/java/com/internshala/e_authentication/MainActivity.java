@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView register,forgotPassword;
     private EditText editTextEmail,editTextPassword;
     private Button signIn;
+    private Button phoneAuthentication;
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
 
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.forgotPassword:
                 startActivity(new Intent(this,Forgot_password.class));
                 break;
+
         }
     }
 
@@ -92,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
         progressBar.setVisibility(View.VISIBLE);
+
         mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -119,5 +122,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
+
     }
 }

@@ -18,6 +18,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 public class profileActivity extends AppCompatActivity {
     private FirebaseUser user;
 
@@ -43,6 +45,7 @@ public class profileActivity extends AppCompatActivity {
         final TextView textViewFullName = (TextView) findViewById(R.id.fullName);
         final TextView textViewEmail = (TextView) findViewById(R.id.emailAddress);
         final TextView textViewAge = (TextView) findViewById(R.id.age);
+        final TextView textViewPhone = (TextView) findViewById(R.id.phoneNumber);
 
         reference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -54,9 +57,11 @@ public class profileActivity extends AppCompatActivity {
                     String fullName = userProfile.fullName;
                     String email = userProfile.email;
                     String age = userProfile.age;
+                    String phone = userProfile.phone;
                     textViewFullName.setText("Name: " +fullName);
                     textViewEmail.setText("Email Address: "+email);
                     textViewAge.setText("Age: " +age);
+                    textViewPhone.setText("Phone Number: " + phone);
 
                 }
             }
